@@ -31,6 +31,9 @@ export interface User extends RegistrantData {
   eventId: string;
 }
 
-export interface GetRegistrantsResponse {
-  registrants: User[];
+export type GetRegistrantsResponse = User[];
+
+export interface RegisterForEventParams {
+  eventId: string;
+  values: RegistrantData;
 }

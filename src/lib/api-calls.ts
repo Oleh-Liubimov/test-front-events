@@ -1,6 +1,6 @@
 import { RegistrantData } from "@/types";
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:8383";
 
 export async function getEvents(page: number = 1, limit: number = 10) {
   const response = await fetch(`${baseUrl}/events?page=${page}&limit=${limit}`);
@@ -9,14 +9,14 @@ export async function getEvents(page: number = 1, limit: number = 10) {
 
 export async function registerForEvent(
   eventId: string,
-  registrantData: RegistrantData
+  values: RegistrantData
 ) {
   const response = await fetch(`${baseUrl}/events/${eventId}/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(registrantData),
+    body: JSON.stringify(values),
   });
   return response.json();
 }
