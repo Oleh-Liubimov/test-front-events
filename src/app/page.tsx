@@ -19,14 +19,12 @@ import EventCard from "@/components/EventCard";
 import RegistrationForm from "@/components/RegistrationForm";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [page, setPage] = useState(1);
   const limit = 10;
   const [selectedEvent, setSelectedEvent] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const router = useRouter();
 
   const { data, error, isLoading } = useQuery<EventsResponse>({
     queryKey: ["events", page],
