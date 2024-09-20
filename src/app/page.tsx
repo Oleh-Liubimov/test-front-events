@@ -59,11 +59,16 @@ export default function Home() {
     }
   }
 
-  if (isLoading) return <Loader2 className="size-5 animate-spin" />;
+  if (isLoading)
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <Loader2 className="size-5 animate-spin" />
+      </div>
+    );
   if (error) return <p>Something gone wrong. Try again.</p>;
 
   return (
-    <main className="">
+    <main className="max-w-7xl h-[calc(100vh-12.5rem)] mx-auto p-4">
       <h1 className="text-center text-3xl mb-5">Events</h1>
       <div className="flex flex-wrap gap-5 justify-center">
         {data?.data.map((event) => (
