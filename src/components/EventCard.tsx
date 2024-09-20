@@ -63,7 +63,7 @@ export default function EventCard({ event, onRegisterClick }: Props) {
       </Card>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-[calc(100vw-200px)] max-h-[calc(100vh-200px)] overflow-auto mx-auto p-5">
+        <DialogContent className="max-w-full max-h-[calc(100vh-200px)] overflow-auto mx-auto p-5">
           <DialogHeader>
             <DialogTitle>Event Registrants</DialogTitle>
           </DialogHeader>
