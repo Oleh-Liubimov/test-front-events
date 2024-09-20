@@ -1,6 +1,6 @@
 import { RegistrantData } from "@/types";
 
-const baseUrl = "http://localhost:8383";
+const baseUrl = "https://test-events-backend.onrender.com";
 
 export async function getEvents(page: number = 1, limit: number = 10) {
   const response = await fetch(`${baseUrl}/events?page=${page}&limit=${limit}`);
